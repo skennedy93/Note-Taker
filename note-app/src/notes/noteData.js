@@ -33,43 +33,43 @@ const notes = [
       title: 'Note 6',
       content:
         "Note Data",
-      id: 5,
+      id: 6,
     },
     {
-      title: 'Note 4',
+      title: 'Note 7',
       content:
         "Note Data",
-      id: 4,
+      id: 7,
     },
     {
-      title: 'Note 5',
+      title: 'Note 8',
       content:
         "Note Data",
-      id: 5,
+      id: 8,
     },
     {
-      title: 'Note 6',
+      title: 'Note 9',
       content:
         "Note Data",
-      id: 5,
+      id: 9,
     },
     {
-      title: 'Note 4',
+      title: 'Note 10',
       content:
         "Note Data",
-      id: 4,
+      id: 10,
     },
     {
-      title: 'Note 5',
+      title: 'Note 11',
       content:
         "Note Data",
-      id: 5,
+      id: 11,
     },
     {
-      title: 'Note 6',
+      title: 'Note 12',
       content:
         "Note Data",
-      id: 5,
+      id: 12,
     },
   ];
 

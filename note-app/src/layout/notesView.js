@@ -8,7 +8,7 @@ const NoteView = props => {
     <div class="row">
           {props.notes.map(note => {
             return (
-              <div class="col">
+      <div key={note.id} class="col">
               <Note note={note} />
               </div>  
             );
