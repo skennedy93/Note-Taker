@@ -29,7 +29,7 @@ const reducers = (state = currentState, action) => {
       case DELETE_NOTE:
       return {
         ...state,
-        notes: state.notes.filter(note => note.id !== state.getNote.id),
+        notes: state.notes.filter(note => note.id !== state.selectedNote.id),
         modalVisible: !state.modalVisible,
         selectedNote: {},
       };

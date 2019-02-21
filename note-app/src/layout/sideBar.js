@@ -27,10 +27,10 @@ const Bar = styled.div`
                 <Title>Notes</Title>
                 <ButtonList>
                 <ButtonCont>
-                <button type="button" className="btn btn-dark">View All Notes</button>
+                <Link to="/"><button type="button" className="btn btn-dark">View All Notes</button></Link>
                 </ButtonCont>
                  <ButtonCont>
-                <button type="button" className="btn btn-dark">Add New Note</button>
+                <Link to="/add"><button type="button" className="btn btn-dark">Add New Note</button></Link>
                 </ButtonCont>
                 </ButtonList>
             </Bar>

@@ -6,6 +6,7 @@ import {Route, withRouter} from 'react-router-dom';
 import './index.css';
 import DeleteModal from './layout/deleteModal'
 import { connect } from 'react-redux';
+import NewNote from './layout/addNote'
 
 const Container = styled.div`
     display: flex;
@@ -37,8 +38,9 @@ class App extends Component {
           
 
           <Route exact path='/' component={notesView}/>
-          {/* 
           <Route exact path='/add' component={NewNote}/>
+          {/* 
+          
           <Route exact path='/notes/:noteId' component={SingleNote} />
           <Route path='/notes/:noteId/edit' component={EditNote}/> */}
           </Views>
