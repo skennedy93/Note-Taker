@@ -29,4 +29,48 @@ const notes = [
         "Note Data",
       id: 5,
     },
+    {
+      title: 'Note 6',
+      content:
+        "Note Data",
+      id: 5,
+    },
+    {
+      title: 'Note 4',
+      content:
+        "Note Data",
+      id: 4,
+    },
+    {
+      title: 'Note 5',
+      content:
+        "Note Data",
+      id: 5,
+    },
+    {
+      title: 'Note 6',
+      content:
+        "Note Data",
+      id: 5,
+    },
+    {
+      title: 'Note 4',
+      content:
+        "Note Data",
+      id: 4,
+    },
+    {
+      title: 'Note 5',
+      content:
+        "Note Data",
+      id: 5,
+    },
+    {
+      title: 'Note 6',
+      content:
+        "Note Data",
+      id: 5,
+    },
   ];
+
+  export default notes;

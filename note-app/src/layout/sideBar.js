@@ -14,9 +14,11 @@ const ButtonCont = styled.div`
     padding:2%;
 `
 const Bar = styled.div`
-    background: #f4f5f7;
+    background: #bacff2;
     padding: 1.5%;
     width: 15%;
+    
+    
 `
  class SideBar extends React.Component {
     render(){

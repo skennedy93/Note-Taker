@@ -1,38 +1,27 @@
-import React, { Component } from "react";
-import {notes} from "../notes/noteData";
+import React from "react";
 import Note from '../notes/note'
-import styled from 'styled-components';
+import { connect } from 'react-redux';
 
-const NoteList = styled.div`
-width: 1000px; 
-height: 100%; 
-background: #F0F0F0;
-display: flex;
-justify-content: center; 
-align-items: center; 
-`
-const CardContent = styled.div`
-
-`
-
-class NoteView extends Component {
-  constructor() {
-    super();
-    this.state = {
-      notes: notes
-    };
-  }
-  render() {
+const NoteView = props => {
     return (
-      <NoteList>
-        
-        <CardContent>
-          <Note note={this.props.notes} />
-        </CardContent>
-      </NoteList>
+<div class="container">
+    <div class="row">
+          {props.notes.map(note => {
+            return (
+              <div class="col">
+              <Note note={note} />
+              </div>  
+            );
+          })}
+    </div>
+</div>
     );
+  };
+  
+  const mapStateToProps = (state) => {
+    return {
+      notes: state.notes
+    }
   }
-}
-console.log(notes,"NoteView")
-
-export default NoteView;
+  
+  export default connect(mapStateToProps)(NoteView);
