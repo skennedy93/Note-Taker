@@ -1,6 +1,8 @@
 import React from "react";
-import Note from '../notes/note'
+import NoteData from '../notes/note'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import {getNote} from '../redux/actions/actions'
 
 const NoteView = props => {
     return (
@@ -8,8 +10,11 @@ const NoteView = props => {
     <div class="row">
           {props.notes.map(note => {
             return (
-      <div key={note.id} class="col">
-              <Note note={note} />
+            <div key={note.id} class="col">                                       
+            <Link to={`/view/${note.id}`} style={{ color: 'black',textDecoration: 'none'}}
+             onClick={() => props.getNote(note.id)} >
+              <NoteData note={note} />
+            </Link>
               </div>  
             );
           })}
@@ -24,4 +29,4 @@ const NoteView = props => {
     }
   }
   
-  export default connect(mapStateToProps)(NoteView);
+  export default connect(mapStateToProps, {getNote})(NoteView);

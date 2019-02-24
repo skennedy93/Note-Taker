@@ -1,4 +1,4 @@
-import notes from '../../notes/noteData';
+import notes from '../../notes/noteInfo';
 import {
   ADD_NOTE,
   DELETE_NOTE,
@@ -11,7 +11,7 @@ const currentState = {
   notes: notes,
   modalVisible: false,
   id: notes.length + 1,
-  selectedNote: {},
+  selectNote: {},
 };
 
 const reducers = (state = currentState, action) => {
@@ -29,9 +29,9 @@ const reducers = (state = currentState, action) => {
       case DELETE_NOTE:
       return {
         ...state,
-        notes: state.notes.filter(note => note.id !== state.selectedNote.id),
+        notes: state.notes.filter(note => note.id !== state.selectNote.id),
         modalVisible: !state.modalVisible,
-        selectedNote: {},
+        selectNote: {},
       };
       case TOGGLE_DELETE:
       return {
@@ -45,12 +45,12 @@ const reducers = (state = currentState, action) => {
           if (note.id !== action.payload.id) return note;
           return action.payload;
         }),
-        getNote: action.payload
+        selectNote: action.payload
       };
     case GET_NOTE:
       return {
         ...state,
-        getNote: state.notes.filter(note => note.id === action.payload)[0],
+        selectNote: state.notes.filter(note => note.id === action.payload)[0],
       }
     default:
       return state;

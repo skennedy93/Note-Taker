@@ -7,6 +7,8 @@ import './index.css';
 import DeleteModal from './layout/deleteModal'
 import { connect } from 'react-redux';
 import NewNote from './layout/addNote'
+import EditView from './layout/editView'
+import Note from './layout/singleNote'
 
 const Container = styled.div`
     display: flex;
@@ -30,19 +32,13 @@ class App extends Component {
   render() {
     return (
         <Container>
-          
           <SideBar/>
-          
           <Views>
           <div>{this.props.modalVisible && (<Modal><DeleteModal /></Modal>)}</div>
-          
-
           <Route exact path='/' component={notesView}/>
           <Route exact path='/add' component={NewNote}/>
-          {/* 
-          
-          <Route exact path='/notes/:noteId' component={SingleNote} />
-          <Route path='/notes/:noteId/edit' component={EditNote}/> */}
+          <Route path="/edit/:id" component={EditView} />
+          <Route path="/view/:id" component={Note} />
           </Views>
         </Container>
     );

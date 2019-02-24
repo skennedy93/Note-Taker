@@ -10,27 +10,23 @@ export const addNote = note => {
     payload: note,
   };
 };
-
 export const deleteNote = (id) => {
     return {
       type: DELETE_NOTE,
       payload: id,
     }
   }
-
 export const toggleDelete = () => {
     return {
       type: TOGGLE_DELETE,
     }
   }
-
 export const updateNote = note => {
   return {
     type: UPDATE_NOTE,
     payload: note,
   };
 };
-
 export const getNote = (id) => {
   return {
     type: GET_NOTE,

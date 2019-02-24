@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { toggleDelete, deleteNote } from '../redux/actions/actions';
+import { Link } from 'react-router-dom';
 
 const DeleteModal = props => {
   return (
@@ -18,7 +18,7 @@ const DeleteModal = props => {
       </div>
       <div class="modal-footer">
         <button onClick={props.toggleDelete} type="button" class="btn btn-dark" >Close</button>
-        <Link to="/" onClick={props.deleteNote} ><button type="button" class="btn btn-danger">Delete</button></Link>
+        <Link to="/" onClick={props.deleteNote}  type="button" class="btn btn-danger">Delete</Link>
       </div>
     </div>
   </div>
