@@ -1,8 +1,10 @@
+import axios from 'axios';
 export const ADD_NOTE = 'ADD_NOTE';
 export const DELETE_NOTE = 'DELETE_NOTE';
 export const TOGGLE_DELETE = 'TOGGLE_MODAL';
 export const UPDATE_NOTE = 'UPDATE_NOTE';
 export const GET_NOTE = 'SELECT_NOTE';
+
 
 export const addNote = note => {
   return {

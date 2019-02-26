@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import NewNote from './layout/addNote'
 import EditView from './layout/editView'
 import Note from './layout/singleNote'
+import axios from 'axios';
 
 const Container = styled.div`
     display: flex;
@@ -29,6 +30,16 @@ margin-right: 10%;
 
 
 class App extends Component {
+
+  componentDidMount(){
+    axios
+    .get("http://localhost:4000/api/notes")
+    .then(res => {
+      this.setState({notes : res.data});
+    })
+    .catch(err => console.log('error',err))
+  }
+
   render() {
     return (
         <Container>
