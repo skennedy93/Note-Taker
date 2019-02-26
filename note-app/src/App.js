@@ -9,7 +9,8 @@ import { connect } from 'react-redux';
 import NewNote from './layout/addNote'
 import EditView from './layout/editView'
 import Note from './layout/singleNote'
-import axios from 'axios';
+import login from './authorization/login'
+import register from './authorization/register'
 
 const Container = styled.div`
     display: flex;
@@ -31,15 +32,6 @@ margin-right: 10%;
 
 class App extends Component {
 
-  componentDidMount(){
-    axios
-    .get("http://localhost:4000/api/notes")
-    .then(res => {
-      this.setState({notes : res.data});
-    })
-    .catch(err => console.log('error',err))
-  }
-
   render() {
     return (
         <Container>
@@ -50,6 +42,8 @@ class App extends Component {
           <Route exact path='/add' component={NewNote}/>
           <Route path="/edit/:id" component={EditView} />
           <Route path="/view/:id" component={Note} />
+          <Route path="/login" component={login} />
+          <Route path="/register" component={register} />
           </Views>
         </Container>
     );

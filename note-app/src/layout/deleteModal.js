@@ -25,9 +25,10 @@ const DeleteModal = props => {
   )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     notes: state.notes,
+    selectNote: state.selectNote,
   }
 }
 

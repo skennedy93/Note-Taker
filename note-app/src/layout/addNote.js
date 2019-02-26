@@ -27,8 +27,8 @@ import { Redirect } from 'react-router-dom';
    render() {
     return (
           <div>
-         <div class="card" style={{width: '18rem', margin: '5px',}}>
-          <div class="card-body">
+         <div className="card" style={{width: '18rem', margin: '5px',}}>
+          <div className="card-body">
           <form onSubmit={this.submitNote}>
           <div className="form-group">
             <input
@@ -37,17 +37,17 @@ import { Redirect } from 'react-router-dom';
               placeholder="Note Title"
               value={this.state.newNote.title}
               onChange={this.changeValue}
-              class="form-control"
-            />
+              className="form-control"
+             />
             <textarea
               name="content"
               placeholder="Note Content"
               value={this.state.newNote.content}
               onChange={this.changeValue}
-              class="form-control"
+              className="form-control"
             />
-            <div class="modal-footer">
-            <button type="submit" class="btn btn-dark" >
+            <div className="modal-footer">
+            <button type="submit" className="btn btn-dark" >
             submit
             </button>
             </div>

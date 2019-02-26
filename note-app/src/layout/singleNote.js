@@ -4,17 +4,13 @@ import { Link } from 'react-router-dom';
 import { toggleDelete } from '../redux/actions/actions';
 
  const Note = props => {
-
-  const note = props.notes.filter(
-    note => String(note.id) === props.match.params.id)[0];
-
    return (
 <div class="card" style={{width: '18rem', margin: '5px',}}>
   <div class="card-body">
-        <h5 class="card-title">{note.title}</h5>
-        <p class="card-text">{note.content}</p>
+        <h5 class="card-title">{props.selectNote.title}</h5>
+        <p class="card-text">{props.selectNote.content}</p>
         <div class="modal-footer">
-        <Link type="button" class="btn btn-dark" to={`/edit/${note.id}`}>
+        <Link type="button" class="btn btn-dark" to={`/edit/${props.selectNote.id}`}>
           <div>Edit</div>
         </Link>
         <button onClick={props.toggleDelete} type="button" class="btn btn-dark">Delete</button>
@@ -26,7 +22,7 @@ import { toggleDelete } from '../redux/actions/actions';
 
  const mapStateToProps = state => {
   return {
-    notes: state.notes,
+    selectNote: state.selectNote,
   };
 };
 

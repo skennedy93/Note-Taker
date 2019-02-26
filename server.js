@@ -3,10 +3,12 @@ const knex = require('knex');
 const helmet = require('helmet');
 const server = express();
 const morgan = require('morgan');
+const cors = require('cors')
 
 server.use(express.json());
 server.use(helmet());
 server.use(morgan());
+server.use(cors());
 
 
 const dbConfig = require('./knexfile'); 
@@ -22,7 +24,7 @@ server.get("/api/notes", (req, res) => {
   db('notes').then(notes => {
       res.status(200).json(notes); 
   }).catch(err => {
-      res.status(500).json({error: "Cannot retrieve notes"})
+      res.status(500).json({error: "Cannot get notes"})
   })
 });
 //----------------------------------GET INDIVIDUAL--------------------------------------
@@ -32,7 +34,7 @@ server.get("/api/notes/:id", (req, res) => {
   .where({id})
   .then(note => res.status(200).json(note))
   .catch (err => {
-      res.status(500).json({error: "Cannot retrieve notes"})
+      res.status(500).json({error: "Cannot get the note"})
   });
 })
 //-------------------------------------POST-------------------------------------------
@@ -49,7 +51,7 @@ server.post('/api/notes', (req, res) => {
           res.status(201).json(ids);
       })
       .catch (err => {
-          res.status(500).json({error: "Cannot retrieve notes"})
+          res.status(500).json({error: "Cannot post note"})
  });
 })
 //-------------------------------------------DELETE-------------------------------------------

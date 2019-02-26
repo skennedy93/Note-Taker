@@ -54,7 +54,7 @@ class EditView extends React.Component {
           </div>
           </div>
         </form>
-        {this.state.redirect && <Redirect to={`/view/${this.state.note.id}`} />}
+        {this.state.redirect && <Redirect to={`/view/${this.state.note._id}`} />}
       </div>
       </div>
     );

@@ -8,11 +8,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware} from 'redux';
 import reducers from './redux/reducers/reducers';
+import thunk from 'redux-thunk';
+
+const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(  
-    <Provider store={createStore(reducers)}>
+    <Provider store={store}>
     <Router>
       <App />
     </Router>

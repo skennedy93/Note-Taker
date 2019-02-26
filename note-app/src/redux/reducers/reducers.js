@@ -1,57 +1,72 @@
 import notes from '../../notes/noteInfo';
 import {
-  ADD_NOTE,
+  NOTES_FETCHED,
+  ERROR_FETCHING,
+  ERROR_ADDING_NOTE,
   DELETE_NOTE,
+  DELETE_ERROR,
   TOGGLE_DELETE,
-  UPDATE_NOTE,
+  UPDATE_ERROR,
   GET_NOTE,
+  GET_ERROR,
 } from '../actions/actions';
 
 const currentState = {
-  notes: notes,
+  notes: [],
   modalVisible: false,
-  id: notes.length + 1,
   selectNote: {},
+  authed: false,
 };
 
 const reducers = (state = currentState, action) => {
   switch (action.type) {
-    case ADD_NOTE:
-      const newNote = {
-        ...action.payload,
-        id: state.id,
-      };
+    case ERROR_ADDING_NOTE:
       return {
         ...state,
-        notes: [...state.notes, newNote],
-        id: state.id + 1,
+        error: action.payload,
+      };
+    case NOTES_FETCHED:
+      return {
+        ...state,
+        notes: action.payload,
+      };
+    case ERROR_FETCHING:
+      return {
+        ...state,
+        error: action.payload,
       };
       case DELETE_NOTE:
       return {
         ...state,
-        notes: state.notes.filter(note => note.id !== state.selectNote.id),
         modalVisible: !state.modalVisible,
         selectNote: {},
+      };
+      case DELETE_ERROR:
+      return {
+        ...state,
+        error: action.payload,
       };
       case TOGGLE_DELETE:
       return {
         ...state,
         modalVisible: !state.modalVisible,
       };
-    case UPDATE_NOTE:
+      case UPDATE_ERROR:
       return {
         ...state,
-        notes: state.notes.map(note => {
-          if (note.id !== action.payload.id) return note;
-          return action.payload;
-        }),
-        selectNote: action.payload
+        error: action.payload,
       };
     case GET_NOTE:
+    return {
+      ...state,
+      selectNote: action.payload,
+      }
+      case GET_ERROR:
       return {
         ...state,
-        selectNote: state.notes.filter(note => note.id === action.payload)[0],
-      }
+        error: action.payload,
+      };
+
     default:
       return state;
   }
