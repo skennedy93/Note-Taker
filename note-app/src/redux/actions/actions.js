@@ -18,7 +18,7 @@ export const fetchNotes = () => {
     axios
       .get(`${URL}/notes`)
       .then(({ data }) => {
-        dispatch({ type: NOTES_FETCHED, payload: data.notes });
+        dispatch({ type: NOTES_FETCHED, payload: data });
       })
       .catch(err => {
         dispatch({ type: ERROR_FETCHING, payload: err });
@@ -31,7 +31,7 @@ export const fetchNotes = () => {
     axios
       .post(`${URL}/notes`, note)
       .then(({ data }) => {
-        dispatch(fetchNotes());
+        dispatch(fetchNotes(data));
       })
       .catch(err => {
         dispatch({ type: ERROR_ADDING_NOTE, payload: err });

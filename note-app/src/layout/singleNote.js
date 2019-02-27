@@ -5,15 +5,15 @@ import { toggleDelete } from '../redux/actions/actions';
 
  const Note = props => {
    return (
-<div class="card" style={{width: '18rem', margin: '5px',}}>
-  <div class="card-body">
-        <h5 class="card-title">{props.selectNote.title}</h5>
-        <p class="card-text">{props.selectNote.content}</p>
-        <div class="modal-footer">
-        <Link type="button" class="btn btn-dark" to={`/edit/${props.selectNote.id}`}>
+<div className="card" style={{width: '18rem', margin: '5px',}}>
+  <div className="card-body">
+        <h5 className="card-title">{props.selectNote.title}</h5>
+        <p className="card-text">{props.selectNote.content}</p>
+        <div className="modal-footer">
+        <Link type="button" className="btn btn-dark" to={`/edit/${props.selectNote.id}`}>
           <div>Edit</div>
         </Link>
-        <button onClick={props.toggleDelete} type="button" class="btn btn-dark">Delete</button>
+        <button onClick={props.toggleDelete} type="button" className="btn btn-dark">Delete</button>
         </div>
       </div>
     </div>

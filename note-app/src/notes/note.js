@@ -2,10 +2,10 @@ import React from 'react';
 
 const NoteData = props => {
   return (
-<div class="card" style={{width: '18rem', margin: '5px',}}>
-  <div class="card-body">
-    <h5 class="card-title"><h3>{props.note.title}</h3></h5>
-    <p class="card-text"><p>{props.note.content}</p></p>
+<div className="card" style={{width: '18rem', margin: '5px',}}>
+  <div className="card-body">
+    <h3 className="card-title"><div>{props.note.title}</div></h3>
+    <div className="card-text"><p>{props.note.content}</p></div>
   </div>
 </div>     
   );

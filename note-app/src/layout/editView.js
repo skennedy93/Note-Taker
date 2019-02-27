@@ -28,8 +28,8 @@ class EditView extends React.Component {
 
    render() {
     return (
-      <div class="card" style={{width: '18rem', margin: '5px',}}>
-      <div class="card-body">
+      <div className="card" style={{width: '18rem', margin: '5px',}}>
+      <div className="card-body">
         <form  onSubmit={this.saveEdit}>
         <div className="form-group">
           <input
@@ -47,8 +47,8 @@ class EditView extends React.Component {
             onChange={this.changeValue}
             className="form-control"
           />
-          <div class="modal-footer">
-          <button type="submit" class="btn btn-dark" >
+          <div className="modal-footer">
+          <button type="submit" className="btn btn-dark" >
             Save
           </button>
           </div>

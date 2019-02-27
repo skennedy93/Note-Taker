@@ -1,4 +1,3 @@
-import notes from '../../notes/noteInfo';
 import {
   NOTES_FETCHED,
   ERROR_FETCHING,
@@ -26,6 +25,7 @@ const reducers = (state = currentState, action) => {
         error: action.payload,
       };
     case NOTES_FETCHED:
+    console.log(action)
       return {
         ...state,
         notes: action.payload,
@@ -36,6 +36,7 @@ const reducers = (state = currentState, action) => {
         error: action.payload,
       };
       case DELETE_NOTE:
+      console.log(action)
       return {
         ...state,
         modalVisible: !state.modalVisible,
