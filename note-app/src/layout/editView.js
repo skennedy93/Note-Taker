@@ -28,9 +28,9 @@ class EditView extends React.Component {
 
    render() {
     return (
-      <div className="card" style={{width: '18rem', margin: '5px',}}>
+      <div className="card" style={{width: '90%',marginLeft: '5%',height:'600px'}}>
       <div className="card-body">
-        <form  onSubmit={this.saveEdit}>
+        <form onSubmit={this.saveEdit}>
         <div className="form-group">
           <input
             type="text"
@@ -40,7 +40,7 @@ class EditView extends React.Component {
             onChange={this.changeValue}
             className="form-control"
           />
-          <textarea
+          <textarea style={{height:'450px'}}
             name="content"
             value={this.state.note.content}
             placeholder="Note Content"
@@ -54,7 +54,7 @@ class EditView extends React.Component {
           </div>
           </div>
         </form>
-        {this.state.redirect && <Redirect to={`/view/${this.state.note._id}`} />}
+        {this.state.redirect && <Redirect to={`/view/${this.state.note.id}`} />}
       </div>
       </div>
     );

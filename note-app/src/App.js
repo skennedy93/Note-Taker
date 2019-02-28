@@ -18,6 +18,7 @@ const Container = styled.div`
 `
 const Views = styled.div`
   padding:5%;
+  width:100%;
 `
 const Modal = styled.div`
 position: fixed;

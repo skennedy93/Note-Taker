@@ -11,12 +11,12 @@ export const ERROR_FETCHING = 'ERROR_FETCHING';
 export const DELETE_ERROR = 'DELETE_ERROR';
 export const UPDATE_ERROR = 'UPDATE_ERROR';
 
-const URL = 'http://localhost:4000/api';
+const URL = 'http://localhost:4000/api/notes';
 
 export const fetchNotes = () => {
   return dispatch => {
     axios
-      .get(`${URL}/notes`)
+      .get(`${URL}`)
       .then(({ data }) => {
         dispatch({ type: NOTES_FETCHED, payload: data });
       })
@@ -29,7 +29,7 @@ export const fetchNotes = () => {
  export const addNote = note => {
   return dispatch => {
     axios
-      .post(`${URL}/notes`, note)
+      .post(`${URL}`, note)
       .then(({ data }) => {
         dispatch(fetchNotes(data));
       })
@@ -41,9 +41,9 @@ export const fetchNotes = () => {
   export const deleteNote = id => {
     return dispatch => {
       axios
-        .delete(`${URL}/notes/${id}`)
-        .then((res) => {
-          dispatch({ type: DELETE_NOTE });
+        .delete(`${URL}/${id}`)
+        .then(res => {
+          dispatch({ type: DELETE_NOTE});
         })
         .then(() => {
           dispatch(fetchNotes());
@@ -61,7 +61,7 @@ export const toggleDelete = () => {
   export const updateNote = note => {
     return dispatch => {
       axios
-      .put(`${URL}/notes`, note)
+      .put(`${URL}`, note)
       .then(() => {
         dispatch(fetchNotes());
         dispatch(getNote(note.id));
@@ -74,7 +74,7 @@ export const toggleDelete = () => {
 export const getNote = id => {
   return dispatch => {
     axios
-    .get(`${URL}/notes/${id}`)
+    .get(`${URL}/${id}`)
     .then(({ data }) => {
       dispatch({ type: GET_NOTE, payload: data });
     })

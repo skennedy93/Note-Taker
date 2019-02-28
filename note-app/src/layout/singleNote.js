@@ -5,7 +5,7 @@ import { toggleDelete } from '../redux/actions/actions';
 
  const Note = props => {
    return (
-<div className="card" style={{width: '18rem', margin: '5px',}}>
+<div className="card" style={{width: '90%',marginLeft: '5%',height:'600px'}}>
   <div className="card-body">
         <h5 className="card-title">{props.selectNote.title}</h5>
         <p className="card-text">{props.selectNote.content}</p>

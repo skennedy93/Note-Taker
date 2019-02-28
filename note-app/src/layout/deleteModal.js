@@ -17,8 +17,16 @@ const DeleteModal = props => {
         Are you sure you want to delete this note?
       </div>
       <div className="modal-footer">
-        <button onClick={props.toggleDelete} type="button" className="btn btn-dark" >Close</button>
-        <Link to="/" onClick={props.deleteNote}  type="button" className="btn btn-danger">Delete</Link>
+        <button onClick={props.toggleDelete}
+         type="button"
+          className="btn btn-dark" >
+        Close
+        </button>
+        <Link to="/"
+         onClick={() => props.deleteNote(props.selectNote.id)}
+            type="button" className="btn btn-danger">
+            Delete
+        </Link>
       </div>
     </div>
   </div>
