@@ -58,13 +58,14 @@ export const toggleDelete = () => {
       type: TOGGLE_DELETE,
     }
   }
-  export const updateNote = note => {
+  export const updateNote = id => {
+    console.log(id,"test")
     return dispatch => {
       axios
-      .put(`${URL}`, note)
+      .put(`${URL}/${id}`)
       .then(() => {
         dispatch(fetchNotes());
-        dispatch(getNote(note.id));
+        dispatch(getNote(id));
       })
       .catch(err => {
         dispatch({ type: UPDATE_ERROR, payload: err });

@@ -3,12 +3,14 @@ import { updateNote} from '../redux/actions/actions';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
+
+
 class EditView extends React.Component {
   state = {
-    note: {...this.props.selectNote},
+    note: {...this.props.selectNote[0]},
     redirect: false,
   };
-
+  
    saveEdit = event => {
     event.preventDefault();
     this.props.updateNote(this.state.note);
@@ -27,6 +29,7 @@ class EditView extends React.Component {
   };
 
    render() {
+     console.log(this.state.note,"note")
     return (
       <div className="card" style={{width: '90%',marginLeft: '5%',height:'600px'}}>
       <div className="card-body">

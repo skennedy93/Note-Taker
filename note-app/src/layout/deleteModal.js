@@ -4,6 +4,8 @@ import { toggleDelete, deleteNote } from '../redux/actions/actions';
 import { Link } from 'react-router-dom';
 
 const DeleteModal = props => {
+  const noteInfo = props.selectNote[0]
+  console.log(noteInfo.id)
   return (
   <div className="modal-dialog" role="document">
     <div className="modal-content">
@@ -23,10 +25,12 @@ const DeleteModal = props => {
         Close
         </button>
         <Link to="/"
-         onClick={() => props.deleteNote(props.selectNote.id)}
+        
+         onClick={() => props.deleteNote(noteInfo.id)}
             type="button" className="btn btn-danger">
             Delete
         </Link>
+        
       </div>
     </div>
   </div>
