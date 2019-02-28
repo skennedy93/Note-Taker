@@ -40,7 +40,7 @@ class App extends Component {
           <Views>
           <div>{this.props.modalVisible && (<Modal><DeleteModal /></Modal>)}</div>
           <Route exact path='/' component={notesView}/>
-          <Route exact path='/add' component={NewNote}/>
+          <Route path='/add' component={NewNote}/>
           <Route path="/edit/:id" component={EditView} />
           <Route path="/view/:id" component={Note} />
           <Route path="/login" component={login} />

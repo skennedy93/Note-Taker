@@ -4,20 +4,22 @@ import { Link } from 'react-router-dom';
 import { toggleDelete } from '../redux/actions/actions';
 
  const Note = props => {
-   return (
-<div className="card" style={{width: '90%',marginLeft: '5%',height:'600px'}}>
+   const noteInfo = props.selectNote[0]
+   console.log(noteInfo)
+   
+if (noteInfo){return(<div className="card" style={{width: '90%',marginLeft: '5%',height:'600px'}}>
   <div className="card-body">
-        <h5 className="card-title">{props.selectNote.title}</h5>
-        <p className="card-text">{props.selectNote.content}</p>
+        <h5 className="card-title">{noteInfo.title}</h5>
+        <p className="card-text">{noteInfo.content}</p>
         <div className="modal-footer">
-        <Link type="button" className="btn btn-dark" to={`/edit/${props.selectNote.id}`}>
+        <Link type="button" className="btn btn-dark" to={`/edit/${noteInfo.id}`}>
           <div>Edit</div>
         </Link>
         <button onClick={props.toggleDelete} type="button" className="btn btn-dark">Delete</button>
         </div>
       </div>
-    </div>
-  );
+    </div>)}
+    else {return <h1>Loading...</h1>}
 };
 
  const mapStateToProps = state => {

@@ -40,6 +40,8 @@ import { connect } from 'react-redux';
    render() {
     return (
       <div>
+        <div className="card" style={{width: '75%',marginLeft: '10%',height:'600px'}}>
+        <div className="card-body">
         <form onSubmit={this.submitLogin}>
           <input
             type="text"
@@ -47,6 +49,7 @@ import { connect } from 'react-redux';
             value={this.state.username}
             placeholder="username"
             onChange={this.updateField}
+            className="form-control"
           />
           <input
             type="password"
@@ -54,9 +57,16 @@ import { connect } from 'react-redux';
             value={this.state.password}
             placeholder="password"
             onChange={this.updateField}
+            className="form-control"
           />
-          <input type="submit" value="submit" />
+          <div className="modal-footer">
+          <button type="submit" className="btn btn-dark" >
+          Login
+          </button>
+          </div>
         </form>
+        </div>
+        </div>
         {this.state.message && this.state.message}
       </div>
     );
