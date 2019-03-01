@@ -13,7 +13,7 @@ class EditView extends React.Component {
   
    saveEdit = event => {
     event.preventDefault();
-    this.props.updateNote(this.state.note);
+    this.props.updateNote(this.state.note,this.state.note.id);
     this.setState({
       redirect: true,
     });
@@ -29,7 +29,6 @@ class EditView extends React.Component {
   };
 
    render() {
-     console.log(this.state.note,"note")
     return (
       <div className="card" style={{width: '90%',marginLeft: '5%',height:'600px'}}>
       <div className="card-body">

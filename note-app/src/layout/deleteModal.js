@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const DeleteModal = props => {
   const noteInfo = props.selectNote[0]
-  console.log(noteInfo.id)
   return (
   <div className="modal-dialog" role="document">
     <div className="modal-content">

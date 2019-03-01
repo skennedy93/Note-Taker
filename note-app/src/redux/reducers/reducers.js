@@ -8,6 +8,7 @@ import {
   UPDATE_ERROR,
   GET_NOTE,
   GET_ERROR,
+  NOTE_UPDATED,
 } from '../actions/actions';
 
 const currentState = {
@@ -21,56 +22,52 @@ const currentState = {
 const reducers = (state = currentState, action) => {
   switch (action.type) {
     case ERROR_ADDING_NOTE:
-    console.log(action)
       return {
         ...state,
         error: action.payload,
       };
     case NOTES_FETCHED:
-    console.log(action)
       return {
         ...state,
         notes: action.payload,
       };
     case ERROR_FETCHING:
-    console.log(action)
       return {
         ...state,
         error: action.payload,
       };
       case DELETE_NOTE:
-      console.log(action)
       return {
         ...state,
         modalVisible: !state.modalVisible,
         selectNote: {},
       };
       case DELETE_ERROR:
-      console.log(action)
       return {
         ...state,
         error: action.payload,
       };
       case TOGGLE_DELETE:
-      console.log(action)
       return {
         ...state,
         modalVisible: !state.modalVisible,
       };
+      case NOTE_UPDATED:
+      return {
+        ...state,
+        selectNote: action.payload,
+      };
       case UPDATE_ERROR:
-      console.log(action)
       return {
         ...state,
         error: action.payload,
       };
     case GET_NOTE:
-    console.log(action)
     return {
       ...state,
       selectNote: action.payload,
       }
       case GET_ERROR:
-      console.log(action)
       return {
         ...state,
         error: action.payload,

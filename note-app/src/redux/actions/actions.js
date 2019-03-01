@@ -10,6 +10,7 @@ export const NOTES_FETCHED = 'NOTES_FETCHED';
 export const ERROR_FETCHING = 'ERROR_FETCHING';
 export const DELETE_ERROR = 'DELETE_ERROR';
 export const UPDATE_ERROR = 'UPDATE_ERROR';
+export const NOTE_UPDATED = 'NOTE_UPDATED';
 
 const URL = 'http://localhost:4000/api/notes';
 
@@ -58,13 +59,12 @@ export const toggleDelete = () => {
       type: TOGGLE_DELETE,
     }
   }
-  export const updateNote = id => {
-    console.log(id,"test")
+  export const updateNote = (note,id)=> {
     return dispatch => {
       axios
-      .put(`${URL}/${id}`)
-      .then(() => {
-        dispatch(fetchNotes());
+      .put(`${URL}/${id}`, note)
+      .then( data  => {
+        dispatch({ type: NOTE_UPDATED, payload: data });
         dispatch(getNote(id));
       })
       .catch(err => {

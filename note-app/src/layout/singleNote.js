@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom';
 import { toggleDelete } from '../redux/actions/actions';
 
  const Note = props => {
-   const noteInfo = props.selectNote[0]
-   console.log(noteInfo)
-   
+const noteInfo = props.selectNote[0]
+
 if (noteInfo){return(<div className="card" style={{width: '90%',marginLeft: '5%',height:'600px'}}>
   <div className="card-body">
         <h5 className="card-title">{noteInfo.title}</h5>
