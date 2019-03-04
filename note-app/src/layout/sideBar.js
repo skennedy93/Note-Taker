@@ -19,6 +19,7 @@ const Bar = styled.div`
     width: 15%;
     
     
+    
 `
  class SideBar extends React.Component {
     render(){

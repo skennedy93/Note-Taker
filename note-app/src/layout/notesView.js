@@ -14,7 +14,7 @@ class NoteView extends React.Component {
     <div className="row">
           {this.props.notes.map(note => {
             return (
-            <div key={note.id} className="col">                                       
+            <div key={note.id} className="col"style = {{flexGrow: 0,}}>                                       
             <Link to={`/view/${note.id}`} style={{ color: 'black',textDecoration: 'none'}}
              onClick={() => this.props.getNote(note.id)} >
               <NoteData note={note} />
