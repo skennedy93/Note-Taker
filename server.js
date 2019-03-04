@@ -78,4 +78,6 @@ server.put('/api/notes/:id', (req, res) => {
       .catch(err => {res.status(500).json(err)});
 });
 
-  module.exports = server;
+const port = 4000
+
+server.listen(process.env.PORT||port,()=>console.log('server running'))
