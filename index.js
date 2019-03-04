@@ -1,5 +1,5 @@
-// const server = require('./server.js');
+const server = require('./server.js');
 
-// const port = 4000
+const port = 4000
 
-// server.listen(process.env.PORT||port,()=>console.log('server running'))
+server.listen(process.env.PORT||port,()=>console.log('server running'))
