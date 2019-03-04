@@ -12,7 +12,7 @@ export const DELETE_ERROR = 'DELETE_ERROR';
 export const UPDATE_ERROR = 'UPDATE_ERROR';
 export const NOTE_UPDATED = 'NOTE_UPDATED';
 
-const URL = 'http://localhost:4000/api/notes';
+const URL = 'https://warm-badlands-63920.herokuapp.com/api/notes';
 
 export const fetchNotes = () => {
   return dispatch => {
