@@ -12,14 +12,19 @@ import Note from './layout/singleNote'
 import login from './authorization/login'
 import register from './authorization/register'
 
-const Container = styled.div`
+const AppContainer = styled.div`
     display: flex;
-    height:100%;
- 
 `
 const Views = styled.div`
   padding:5%;
   width:100%;
+  overflow-y:scroll;
+  height:100vh;
+  @media(max-width:500px){
+    position: relative;
+    top:125px;
+    overflow-y:auto;
+  };
 `
 const Modal = styled.div`
 position: fixed;
@@ -37,7 +42,7 @@ class App extends Component {
 
   render() {
     return (
-        <Container>
+        <AppContainer>
           <SideBar/>
           <Views>
           <div>{this.props.modalVisible && (<Modal><DeleteModal /></Modal>)}</div>
@@ -48,7 +53,7 @@ class App extends Component {
           <Route path="/login" component={login} />
           <Route path="/register" component={register} />
           </Views>
-        </Container>
+        </AppContainer>
     );
   }
 }

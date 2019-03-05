@@ -10,6 +10,10 @@ const ButtonList = styled.div`
     display:flex;
     flex-direction: column;
     margin-top:15%;
+    @media(max-width:500px){
+        flex-direction:row;
+        margin: 0;
+    };
 `
 const ButtonCont = styled.div`
     padding:2%;
@@ -18,6 +22,12 @@ const Bar = styled.div`
     background: #bacff2;
     padding: 1.5%;
     width: 200px;
+    @media(max-width:500px){
+    width: 100vw;
+    height: 125px;
+    position: fixed;
+    z-index: 90;
+    };
 `
  class SideBar extends React.Component {
     render(){
