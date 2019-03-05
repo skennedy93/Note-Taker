@@ -38,8 +38,9 @@ import { Redirect } from 'react-router-dom';
               value={this.state.newNote.title}
               onChange={this.changeValue}
               className="form-control"
+              style={{fontSize:'50px'}}
              />
-            <textarea style={{height:'450px'}}
+            <textarea style={{height:'450px',fontSize:'30px'}}
               name="content"
               placeholder="Note Content"
               value={this.state.newNote.content}

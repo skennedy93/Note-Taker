@@ -14,6 +14,7 @@ import register from './authorization/register'
 
 const Container = styled.div`
     display: flex;
+    height:100%;
  
 `
 const Views = styled.div`
@@ -24,10 +25,11 @@ const Modal = styled.div`
 position: fixed;
 z-index: 90;
 display: flex;
-margin-left:20%;
-margin-top: 10%;
-margin-right: 10%;
-/* background-color: rgba(0, 0, 0, 0.3); */
+margin-left:-19%;
+margin-top: -5%;
+background: rgba(0, 0, 0, 0.5);
+height: 100vh;
+width: 100vw;
 `
 
 

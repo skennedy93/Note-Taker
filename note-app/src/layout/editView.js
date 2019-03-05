@@ -41,8 +41,9 @@ class EditView extends React.Component {
             placeholder="Note Title"
             onChange={this.changeValue}
             className="form-control"
+            style={{fontSize:'50px'}}
           />
-          <textarea style={{height:'450px'}}
+          <textarea style={{height:'420px',fontSize:'30px'}}
             name="content"
             value={this.state.note.content}
             placeholder="Note Content"

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Title = styled.h1`
     color: #2F4F4F;
+    margin-left: 5px;
 `
 const ButtonList = styled.div`
     display:flex;
@@ -16,10 +17,7 @@ const ButtonCont = styled.div`
 const Bar = styled.div`
     background: #bacff2;
     padding: 1.5%;
-    width: 15%;
-    
-    
-    
+    width: 200px;
 `
  class SideBar extends React.Component {
     render(){
