@@ -9,8 +9,6 @@ import { connect } from 'react-redux';
 import NewNote from './layout/addNote'
 import EditView from './layout/editView'
 import Note from './layout/singleNote'
-import login from './authorization/login'
-import register from './authorization/register'
 
 const AppContainer = styled.div`
     display: flex;
@@ -35,6 +33,12 @@ margin-top: -5%;
 background: rgba(0, 0, 0, 0.5);
 height: 100vh;
 width: 100vw;
+@media(max-width:780px){
+  margin-left:-29%;
+  };
+@media(max-width:500px){
+  margin-left:-6%;
+  };
 `
 
 
@@ -50,8 +54,6 @@ class App extends Component {
           <Route path='/add' component={NewNote}/>
           <Route path="/edit/:id" component={EditView} />
           <Route path="/view/:id" component={Note} />
-          <Route path="/login" component={login} />
-          <Route path="/register" component={register} />
           </Views>
         </AppContainer>
     );
