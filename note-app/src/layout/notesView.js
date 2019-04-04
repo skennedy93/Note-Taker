@@ -11,7 +11,7 @@ class NoteView extends React.Component {
   render(){
     return (
 <div className="container">
-    <div className="column">
+    <div className="row">
           {this.props.notes.map(note => {
             return (
             <div key={note.id} className="col"style = {{flexGrow: 0,}}>                                       

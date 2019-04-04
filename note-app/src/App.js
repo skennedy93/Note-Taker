@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import SideBar from './layout/sideBar';
 import notesView from './layout/notesView'
 import {Route, withRouter} from 'react-router-dom';
 import './index.css';
@@ -46,6 +47,7 @@ class App extends Component {
   render() {
     return (
         <AppContainer>
+          <SideBar/>
           <Views>
           <div>{this.props.modalVisible && (<Modal><DeleteModal /></Modal>)}</div>
           <Route exact path='/' component={notesView}/>

@@ -20,44 +20,44 @@ server.get('/', (req, res) => {
   });
 
   //------------------------------------GET LIST---------------------------
-server.get("/api/todos", (req, res) => {
-  db('todos').then(todos => {
-      res.status(200).json(todos); 
+server.get("/api/notes", (req, res) => {
+  db('notes').then(notes => {
+      res.status(200).json(notes); 
   }).catch(err => {
-      res.status(500).json({error: "Cannot get todo list"})
+      res.status(500).json({error: "Cannot get notes"})
   })
 });
-//----------------------------------GET INDIVIDUAL TODO--------------------------------------
-server.get("/api/todos/:id", (req, res) => {
+//----------------------------------GET INDIVIDUAL--------------------------------------
+server.get("/api/notes/:id", (req, res) => {
   const { id } = req.params; 
-  db("todos")
+  db("notes")
   .where({id})
-  .then(todo => res.status(200).json(todo))
+  .then(note => res.status(200).json(note))
   .catch (err => {
-      res.status(500).json({error: "Cannot get the todo"})
+      res.status(500).json({error: "Cannot get the note"})
   });
 })
-//-------------------------------------ADD TODO-------------------------------------------
-server.post('/api/todos', (req, res) => {
-  const newTodo = req.body;
+//-------------------------------------POST-------------------------------------------
+server.post('/api/notes', (req, res) => {
+  const newNote = req.body;
   const { title, content } = req.body;
   if (!title || !content) {
-      res.status(400).json({ error: 'Todo title and content required' });
+      res.status(400).json({ error: 'Note title and content required' });
       return;
   }
-  db.insert(newTodo)
-      .into('todos')
+  db.insert(newNote)
+      .into('notes')
       .then(ids => {
           res.status(201).json(ids);
       })
       .catch (err => {
-          res.status(500).json({error: "Cannot add todo"})
+          res.status(500).json({error: "Cannot post note"})
  });
 })
-//-------------------------------------------DELETE TODO-------------------------------------------
-server.delete("/api/todos/:id", (req, res) => {
+//-------------------------------------------DELETE-------------------------------------------
+server.delete("/api/notes/:id", (req, res) => {
   const { id } = req.params;
-  db("todos")
+  db("notes")
     .where({ id })
     .del()
     .then(count => {
@@ -67,11 +67,11 @@ server.delete("/api/todos/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
-//----------------------------------------EDIT TODO--------------------------------------------------
-server.put('/api/todos/:id', (req, res) => {
+//----------------------------------------EDIT--------------------------------------------------
+server.put('/api/notes/:id', (req, res) => {
   const edit = req.body;
   const {id} = req.params;
-   db('todos')
+   db('notes')
       .where({id: id})
       .update(edit)
       .then(count => {res.status(200).json(count)})
