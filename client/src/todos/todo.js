@@ -1,15 +1,15 @@
 import React from 'react';
 
-const NoteData = props => {
+const TodoData = props => {
   return (
 <div className="card">
   <div className="card-body">
     <h3 className="card-title">
-    <div>{props.note.title}</div>
+    <div>{props.todo.title}</div>
     </h3>
   </div>
 </div>     
   );
 };
 
-export default NoteData;
+export default TodoData;
